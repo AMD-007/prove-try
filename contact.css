@@ -1,0 +1,270 @@
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #004085;
+            padding: 15px 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px; /* Adds a gap between the logo and company name */
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            font-family: 'garet', sans-serif;
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 100px 20px; /* Added padding to avoid content hiding under fixed header */
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-header {
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .contact-content {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        /* Contact Form Styling */
+        .contact-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            background: linear-gradient(135deg, #33a1ff, #0056b3);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background: #e7f3ff; /* Light background for contact info */
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info div {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: #004085;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Google Map Section */
+        .map-container {
+            margin-top: 40px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Our Clients Section */
+        .clients-section {
+            padding: 60px 20px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .clients-section h2 {
+            font-size: 3.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .clients-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .clients-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .client-logo img {
+            width: 150px;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s, transform 0.3s;
+        }
+
+        .client-logo img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004085;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+        /* Add a background image to the body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background: url('logo/pr4.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    color: #333;
+}
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .clients-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .contact-info div {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clients-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }

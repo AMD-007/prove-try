@@ -1,0 +1,148 @@
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #004085;
+            padding: 15px 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px; /* Adds a gap between the logo and company name */
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            font-family: 'garet', sans-serif;
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Page Content Styling */
+        .container {
+            max-width: 1100px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2.5em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        .container p {
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            line-height: 1.8;
+            padding: 15px;
+            background: #e7f3ff;
+            border-left: 5px solid #0056b3;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #004085;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+        /* Add a background image to the body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background: url('logo/s2.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    color: #333;
+}
+
+/* Add a semi-transparent background to sections for readability */
+.container {
+    background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+        @media (max-width: 768px) {
+            .container h2 {
+                font-size: 2em;
+            }
+
+            .company-name {
+                font-size: 1.5em;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+            }
+        }

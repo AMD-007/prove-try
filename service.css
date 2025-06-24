@@ -1,0 +1,274 @@
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #004085;
+            padding: 15px 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px; /* Adds a gap between the logo and company name */
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            font-family: 'garet', sans-serif;
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Page Content Styling */
+        .container {
+            max-width: 1100px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        .service-list,
+        .brands-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding-left: 0;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        /* General Styling */
+.service-list li,
+.brands-list li {
+    flex: 1 1 30%;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #333;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    align-items: center;  /* Center content horizontally */
+    justify-content: flex-start;  /* Align content at the top */
+    text-align: center;  /* Center text */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-list li:hover,
+.brands-list li:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);  /* Slight lift effect */
+}
+
+/* Title styling with icon */
+.service-list li strong,
+.brands-list li strong {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 12px;  /* Space between icon and title */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #004085;  /* Title color */
+}
+
+/* Title Icon Styling */
+.title-icon {
+    width: 200px;  /* Adjust icon size */
+    height: 100px;  /* Adjust icon size */
+    margin-bottom: 12px;  /* Space between icon and text */
+    object-fit: contain;  /* Ensure the icon keeps its aspect ratio */
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 80px auto;  /* Added more margin to prevent overlap with fixed header */
+    padding: 20px;
+}
+
+/* Section Heading Styling */
+.container h2 {
+    text-align: center;
+    color: #004085;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+/* List Styling */
+.service-list,
+.brands-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .service-list li,
+    .brands-list li {
+        flex: 1 1 45%;  /* Make list items take up 45% width */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-list li,
+    .brands-list li {
+        flex: 1 1 100%;  /* Make list items take up full width on small screens */
+    }
+}
+
+
+.service-list li strong,
+.brands-list li strong {
+    margin-bottom: 10px;  /* Space between title and content */
+}
+
+        .service-list li:hover,
+        .brands-list li:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .logos-container {
+            overflow: hidden;
+            position: relative;
+            background: #f1f3f5;
+            border-radius: 10px;
+            padding: 20px 0;
+            margin: 20px 0;
+            margin-bottom: 0px;
+        }
+
+        .logos-scroll {
+            display: flex;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #004085;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+        /* Add a background image to the body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background: url('logo/s1.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    color: #333;
+}
+
+/* Add a semi-transparent background to sections for readability */
+section {
+    background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
