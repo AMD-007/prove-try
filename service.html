@@ -6,8 +6,479 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the comprehensive range of IT services and products offered by Prove Fortech Sdn Bhd.">
     <title>Our Service - Prove Fortech Sdn Bhd</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="service.css">
+    <style>/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: url('logo/s1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header Styling - Same as home.css */
+header {
+    background-color: #004085;
+    padding: 15px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+.company-name {
+    font-size: 2.1rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+nav {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 15px;
+    border-radius: 15px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Page Content Styling */
+.container {
+    max-width: 1100px;
+    margin: 100px auto 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    margin-bottom: 25px;
+    color: #0056b3;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+.service-list,
+.brands-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding-left: 0;
+    list-style-type: none;
+    gap: 20px;
+}
+
+/* Service and Partner Items */
+.service-list li,
+.brands-list li {
+    flex: 1 1 calc(33.333% - 20px);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #333;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-list li:hover,
+.brands-list li:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Title styling with icon */
+.service-list li strong,
+.brands-list li strong {
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #004085;
+}
+
+/* Title Icon Styling */
+.title-icon {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+/* Description Styling */
+.service-desc,
+.partner-desc {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Logos Container */
+.logos-container {
+    overflow: hidden;
+    position: relative;
+    background: #f1f3f5;
+    border-radius: 10px;
+    padding: 20px 0;
+    margin: 20px 0 40px;
+}
+
+.logos-scroll {
+    display: flex;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    background-color: #004085;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* =========================================== */
+/* MEDIA QUERIES FOR MOBILE RESPONSIVENESS */
+/* =========================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+        gap: 15px;
+    }
+    
+    .logo img {
+        width: 120px;
+    }
+    
+    .company-name {
+        font-size: 1.6rem;
+        white-space: normal;
+        line-height: 1.2;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile nav panel */
+    nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 260px;
+        height: calc(100vh - 70px);
+        background-color: #004085;
+        flex-direction: column;
+        z-index: 9999;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+        font-size: 1rem;
+        border-radius: 0;
+    }
+    
+    .container {
+        margin: 90px auto 30px;
+        padding: 20px;
+    }
+    
+    .service-list li,
+    .brands-list li {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+    
+    .title-icon {
+        width: 150px;
+        height: 75px;
+    }
+    
+    .container h2 {
+        font-size: 1.8em;
+    }
+    
+    .logo-item {
+        min-width: 120px;
+        padding: 10px;
+        margin: 0 5px;
+    }
+    
+    .logos-container {
+        padding: 15px 0;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    header {
+        height: 80px;
+        padding: 0;
+    }
+
+    .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .company-name {
+        font-size: 1.1rem;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: left;
+    }
+    
+    /* Update nav position for smaller header */
+    nav {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    
+    .container {
+        margin: 90px auto 20px;
+        padding: 15px;
+    }
+    
+    .service-list li,
+    .brands-list li {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .title-icon {
+        width: 120px;
+        height: 60px;
+    }
+    
+    .container h2 {
+        font-size: 1.5em;
+    }
+    
+    .service-desc,
+    .partner-desc {
+        font-size: 0.95em;
+    }
+    
+    .logo-item {
+        min-width: 100px;
+        padding: 8px;
+    }
+    
+    .logo-item img {
+        max-height: 40px;
+    }
+}
+
+/* Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .company-name {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .container h2 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+    
+    .service-list li,
+    .brands-list li {
+        padding: 12px;
+    }
+    
+    .title-icon {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .service-list li strong,
+    .brands-list li strong {
+        font-size: 1.1em;
+    }
+    
+    .service-desc,
+    .partner-desc {
+        font-size: 0.9em;
+    }
+    
+    .menu-toggle {
+        width: 26px;
+        height: 22px;
+    }
+    
+    .logo-item {
+        min-width: 80px;
+    }
+    
+    .logo-item img {
+        max-height: 30px;
+    }
+}</style>
 </head>
 
 <body>
@@ -18,10 +489,18 @@
                 <img src="logo/prvv.png" alt="Prove Fortech Logo">
             </div>
             <div class="company-name">PROVE FORTECH SDN BHD</div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><a href="service.html" class="active">Services</a></li>
                     <li><a href="story.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -31,123 +510,160 @@
 
     <!-- Content Section -->
     <section class="container">
-    <h2>Our Services</h2>
-    <ul class="service-list">
-        <li>
-            <strong>
-                <img src="logo/i2.png" alt="Network Infrastructure Icon" class="title-icon">
-                Network Infrastructure
-            </strong>
-            LAN Switching, WAN Routing, Wireless, Structured Cabling, Load Balancer, Power Management
-        </li>
-        <li>
-            <strong>
-                <img src="logo/i3.png" alt="Security Solutions Icon" class="title-icon">
-                Security Solutions
-            </strong>
-            CCTV, IP Surveillance, Analytical Systems, Firewall, Endpoint Security, Physical Security
-        </li>
-        <li>
-            <strong>
-                <img src="logo/i1.png" alt="Unified Communication Icon" class="title-icon">
-                Unified Communication
-            </strong>
-            Teleconference, Video & Voice Content
-        </li>
-        <li>
-            <strong>
-                <img src="logo/i5.png" alt="Enterprise Solutions Icon" class="title-icon">
-                Enterprise Solutions
-            </strong>
-            Business Software, Operating Systems, Developer Tools, Security Software, Digital Imaging Software
-        </li>
-        <li>
-            <strong>
-                <img src="logo/i6.png" alt="Hardware Icon" class="title-icon">
-                Hardware
-            </strong>
-            Desktops, Notebooks, Tablets, Servers
-        </li>
-    </ul>
-</section>
+        <h2>Our Services</h2>
+        <ul class="service-list">
+            <li>
+                <strong>
+                    <img src="logo/i2.png" alt="Network Infrastructure Icon" class="title-icon">
+                    Network Infrastructure
+                </strong>
+                <span class="service-desc">LAN Switching, WAN Routing, Wireless, Structured Cabling, Load Balancer, Power Management</span>
+            </li>
+            <li>
+                <strong>
+                    <img src="logo/i3.png" alt="Security Solutions Icon" class="title-icon">
+                    Security Solutions
+                </strong>
+                <span class="service-desc">CCTV, IP Surveillance, Analytical Systems, Firewall, Endpoint Security, Physical Security</span>
+            </li>
+            <li>
+                <strong>
+                    <img src="logo/i1.png" alt="Unified Communication Icon" class="title-icon">
+                    Unified Communication
+                </strong>
+                <span class="service-desc">Teleconference, Video & Voice Content</span>
+            </li>
+            <li>
+                <strong>
+                    <img src="logo/i5.png" alt="Enterprise Solutions Icon" class="title-icon">
+                    Enterprise Solutions
+                </strong>
+                <span class="service-desc">Business Software, Operating Systems, Developer Tools, Security Software, Digital Imaging Software</span>
+            </li>
+            <li>
+                <strong>
+                    <img src="logo/i6.png" alt="Hardware Icon" class="title-icon">
+                    Hardware
+                </strong>
+                <span class="service-desc">Desktops, Notebooks, Tablets, Servers</span>
+            </li>
+        </ul>
+    </section>
 
-<section class="container">
-    <h2>Our Partners</h2>
-    <ul class="brands-list">
-        <li>
-            <strong><img src="abc/a1.png" alt="Cisco Icon" class="title-icon">
-            </strong>End-to-end solutions from Collaboration to Data Center and Virtualization</li>
-        <li>
-            <strong><img src="abc/b4.png" alt="Juniper Icon" class="title-icon">
-            </strong>High-performance network infrastructure for fast, reliable, secure access</li>
-        <li>
-            <strong><img src="abc/a6.png" alt="Vertiv Icon" class="title-icon">
-            </strong>UPS power backup, cooling solutions, data center design, power distribution</li>
-        <li>
-            <strong><img src="abc/a3.png" alt="Avaya Icon" class="title-icon">
-            </strong>Unified communications, real-time video collaboration, and networking services</li>
-        <li>
-            <strong><img src="abc/aa7.png" alt="Ruckus Icon" class="title-icon">
-            </strong>Advanced wireless systems for mobile internet infrastructure</li>
-        <li>
-            <strong><img src="abc/b1.png" alt="Axis Icon" class="title-icon">
-            </strong>Network cameras, video encoders, and digital solutions for security</li>
-    </ul>
+    <section class="container">
+        <h2>Our Partners</h2>
+        <ul class="brands-list">
+            <li>
+                <strong><img src="abc/a1.png" alt="Cisco Icon" class="title-icon"></strong>
+                <span class="partner-desc">End-to-end solutions from Collaboration to Data Center and Virtualization</span>
+            </li>
+            <li>
+                <strong><img src="abc/b4.png" alt="Juniper Icon" class="title-icon"></strong>
+                <span class="partner-desc">High-performance network infrastructure for fast, reliable, secure access</span>
+            </li>
+            <li>
+                <strong><img src="abc/a6.png" alt="Vertiv Icon" class="title-icon"></strong>
+                <span class="partner-desc">UPS power backup, cooling solutions, data center design, power distribution</span>
+            </li>
+            <li>
+                <strong><img src="abc/a3.png" alt="Avaya Icon" class="title-icon"></strong>
+                <span class="partner-desc">Unified communications, real-time video collaboration, and networking services</span>
+            </li>
+            <li>
+                <strong><img src="abc/aa7.png" alt="Ruckus Icon" class="title-icon"></strong>
+                <span class="partner-desc">Advanced wireless systems for mobile internet infrastructure</span>
+            </li>
+            <li>
+                <strong><img src="abc/b1.png" alt="Axis Icon" class="title-icon"></strong>
+                <span class="partner-desc">Network cameras, video encoders, and digital solutions for security</span>
+            </li>
+        </ul>
 
-<h2>Network Infrastructure</h2>
-<div class="logos-container">
-    <div class="logos-scroll">
-        <!-- Original Logos -->
-        <div class="logo-item"><img src="abc/a1.png" alt="Logo 1"></div>
-        <div class="logo-item"><img src="abc/a2.png" alt="Logo 2"></div>
-        <div class="logo-item"><img src="abc/a3.png" alt="Logo 3"></div>
-        <div class="logo-item"><img src="abc/a4.png" alt="Logo 4"></div>
-        <div class="logo-item"><img src="abc/a5.png" alt="Logo 5"></div>
-        <div class="logo-item"><img src="abc/a6.png" alt="Logo 6"></div>
-        <div class="logo-item"><img src="abc/a7.png" alt="Logo 7"></div>
-        <div class="logo-item"><img src="abc/aa8.png" alt="Logo 8"></div>
+        <h2>Network Infrastructure</h2>
+        <div class="logos-container">
+            <div class="logos-scroll">
+                <!-- Original Logos -->
+                <div class="logo-item"><img src="abc/a1.png" alt="Logo 1"></div>
+                <div class="logo-item"><img src="abc/a2.png" alt="Logo 2"></div>
+                <div class="logo-item"><img src="abc/a3.png" alt="Logo 3"></div>
+                <div class="logo-item"><img src="abc/a4.png" alt="Logo 4"></div>
+                <div class="logo-item"><img src="abc/a5.png" alt="Logo 5"></div>
+                <div class="logo-item"><img src="abc/a6.png" alt="Logo 6"></div>
+                <div class="logo-item"><img src="abc/a7.png" alt="Logo 7"></div>
+                <div class="logo-item"><img src="abc/aa8.png" alt="Logo 8"></div>
 
-        <!-- Duplicate Logos for Seamless Scrolling -->
-        <div class="logo-item"><img src="abc/a1.png" alt="Logo 1"></div>
-        <div class="logo-item"><img src="abc/a2.png" alt="Logo 2"></div>
-        <div class="logo-item"><img src="abc/a3.png" alt="Logo 3"></div>
-        <div class="logo-item"><img src="abc/a4.png" alt="Logo 4"></div>
-        <div class="logo-item"><img src="abc/a5.png" alt="Logo 5"></div>
-        <div class="logo-item"><img src="abc/a6.png" alt="Logo 6"></div>
-        <div class="logo-item"><img src="abc/a7.png" alt="Logo 7"></div>
-        <div class="logo-item"><img src="abc/aa8.png" alt="Logo 8"></div>
-    </div>
-</div>
+                <!-- Duplicate Logos for Seamless Scrolling -->
+                <div class="logo-item"><img src="abc/a1.png" alt="Logo 1"></div>
+                <div class="logo-item"><img src="abc/a2.png" alt="Logo 2"></div>
+                <div class="logo-item"><img src="abc/a3.png" alt="Logo 3"></div>
+                <div class="logo-item"><img src="abc/a4.png" alt="Logo 4"></div>
+                <div class="logo-item"><img src="abc/a5.png" alt="Logo 5"></div>
+                <div class="logo-item"><img src="abc/a6.png" alt="Logo 6"></div>
+                <div class="logo-item"><img src="abc/a7.png" alt="Logo 7"></div>
+                <div class="logo-item"><img src="abc/aa8.png" alt="Logo 8"></div>
+            </div>
+        </div>
 
-<h2>Security | Unified Com | Physical Security</h2>
-<div class="logos-container">
-    <div class="logos-scroll">
-        <!-- Original Logos -->
-        <div class="logo-item"><img src="abc/b1.png" alt="Logo 1"></div>
-        <div class="logo-item"><img src="abc/b2.png" alt="Logo 2"></div>
-        <div class="logo-item"><img src="abc/b3.jpg" alt="Logo 3"></div>
-        <div class="logo-item"><img src="abc/b4.png" alt="Logo 4"></div>
-        <div class="logo-item"><img src="abc/b5.png" alt="Logo 5"></div>
-        <div class="logo-item"><img src="abc/b6.png" alt="Logo 6"></div>
-        <div class="logo-item"><img src="abc/b7.png" alt="Logo 7"></div>
-        <div class="logo-item"><img src="abc/a3.png" alt="Logo 8"></div>
+        <h2>Security | Unified Com | Physical Security</h2>
+        <div class="logos-container">
+            <div class="logos-scroll">
+                <!-- Original Logos -->
+                <div class="logo-item"><img src="abc/b1.png" alt="Logo 1"></div>
+                <div class="logo-item"><img src="abc/b2.png" alt="Logo 2"></div>
+                <div class="logo-item"><img src="abc/b3.jpg" alt="Logo 3"></div>
+                <div class="logo-item"><img src="abc/b4.png" alt="Logo 4"></div>
+                <div class="logo-item"><img src="abc/b5.png" alt="Logo 5"></div>
+                <div class="logo-item"><img src="abc/b6.png" alt="Logo 6"></div>
+                <div class="logo-item"><img src="abc/b7.png" alt="Logo 7"></div>
+                <div class="logo-item"><img src="abc/a3.png" alt="Logo 8"></div>
 
-        <!-- Duplicate Logos for Seamless Scrolling -->
-        <div class="logo-item"><img src="abc/b1.png" alt="Logo 1"></div>
-        <div class="logo-item"><img src="abc/b2.png" alt="Logo 2"></div>
-        <div class="logo-item"><img src="abc/b3.jpg" alt="Logo 3"></div>
-        <div class="logo-item"><img src="abc/b4.png" alt="Logo 4"></div>
-        <div class="logo-item"><img src="abc/b5.png" alt="Logo 5"></div>
-        <div class="logo-item"><img src="abc/b6.png" alt="Logo 6"></div>
-        <div class="logo-item"><img src="abc/b7.png" alt="Logo 7"></div>
-        <div class="logo-item"><img src="abc/a3.png" alt="Logo 8"></div>
-    </div>
-</div>
-</section>
+                <!-- Duplicate Logos for Seamless Scrolling -->
+                <div class="logo-item"><img src="abc/b1.png" alt="Logo 1"></div>
+                <div class="logo-item"><img src="abc/b2.png" alt="Logo 2"></div>
+                <div class="logo-item"><img src="abc/b3.jpg" alt="Logo 3"></div>
+                <div class="logo-item"><img src="abc/b4.png" alt="Logo 4"></div>
+                <div class="logo-item"><img src="abc/b5.png" alt="Logo 5"></div>
+                <div class="logo-item"><img src="abc/b6.png" alt="Logo 6"></div>
+                <div class="logo-item"><img src="abc/b7.png" alt="Logo 7"></div>
+                <div class="logo-item"><img src="abc/a3.png" alt="Logo 8"></div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 PROVE FORTECH SDN BHD</p>
     </footer>
-</body>
 
+    <script>
+        // Mobile menu toggle functionality - same as index.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = nav.contains(event.target);
+                const isClickOnToggle = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
