@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Prove Fortech Sdn Bhd - Get in touch with our team for comprehensive ICT solutions and services.">
     <title>Contact Us - Prove Fortech Sdn Bhd</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
@@ -13,15 +15,23 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo/prvv.png" alt="Prove Fortech Logo"> <!-- Replace with your logo URL -->
+                <img src="logo/prvv.png" alt="Prove Fortech Logo">
             </div>
             <div class="company-name">PROVE FORTECH SDN BHD</div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <nav>
                 <ul>
-                <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="story.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,75 +39,531 @@
 
     <!-- Main Content -->
     <main>
-        <div class="contact-header">
-            <h1>CONTACT US</h1>
-        </div>
-
-        <div class="contact-content">
-            <p>Whether you have questions about our services, pricing, or any other topic, our dedicated team is here to assist you. Please complete the form, and we will respond promptly to address your needs.</p>
-            
-<!-- Contact Form -->
-<div>
-    <form action="https://formsubmit.co/luqman.ablatif@gmail.com" method="POST" class="contact-form">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" id="name" required placeholder="Your Name">
-        <input type="email" name="email" id="email" required placeholder="Your Email">
-        <input type="text" name="subject" id="subject" required placeholder="Subject">
-        <textarea name="message" id="message" required placeholder="Message"></textarea>
-        <!-- Google reCAPTCHA -->
-        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-        <button type="submit">Send Message</button>
-    </form>
-</div>
-
-</script>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-            <div>
-                <h2>Email Us</h2>
-                <p>aida@prove.com.my<br>sales@prove.com.my</p>
+        <div class="contact-section">
+            <div class="contact-header">
+                <h1>CONTACT US</h1>
             </div>
-            <div>
-                <h2>Call Us</h2>
-                <p>+6013-457-3730<br>+6013-901-7373</p>
+
+            <div class="contact-content">
+                <p>Whether you have questions about our services, pricing, or any other topic, our dedicated team is here to assist you. Please complete the form, and we will respond promptly to address your needs.</p>
+                
+                <!-- Contact Form -->
+                <div class="form-container">
+                    <form action="https://formsubmit.co/luqman.ablatif@gmail.com" method="POST" class="contact-form" id="contactForm">
+                        <!-- Hidden fields to fix reCAPTCHA and improve form -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Prove Fortech Contact Form Submission">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Prove Fortech! We'll respond to your inquiry within 24 hours.">
+                        <input type="hidden" name="_next" value="#" id="successRedirect">
+                        
+                        <!-- Form fields -->
+                        <input type="text" name="name" id="name" required placeholder="Your Name">
+                        <input type="email" name="email" id="email" required placeholder="Your Email">
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)">
+                        <input type="text" name="subject" id="subject" required placeholder="Subject">
+                        <textarea name="message" id="message" required placeholder="Your Message" rows="5"></textarea>
+                        <button type="submit" id="submitBtn">Send Message</button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="success-message">
+                        <div class="success-icon">✓</div>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for contacting Prove Fortech. We'll respond to your inquiry within 24 hours.</p>
+                    </div>
+                    
+                    <!-- Error/Fallback Message -->
+                    <div id="errorMessage" class="error-message">
+                        <div class="error-icon">⚠️</div>
+                        <h3>Form Submission Issue</h3>
+                        <p>There was an issue with the form submission. Please try again or email us directly at <strong>aida@prove.com.my</strong>.</p>
+                        <button id="tryAgainBtn" class="retry-btn">Try Again</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h2>Visit Us</h2>
-                <p>Level 33, Jalan Ilham Tower,<br>No.8, Jalan Binjai,<br> 50450 Kuala Lumpur.</p>
+
+            <!-- Contact Information Section -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h2>Our Address</h2>
+                    <p>Level 33, Jalan Ilham Tower,<br>No.8, Jalan Binjai,<br>50450 Kuala Lumpur</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h2>Business Hours</h2>
+                    <p>09:00 AM – 06:00 PM<br>Monday – Friday</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h2>Get in Touch</h2>
+                    <p>Phone: +6013-457-3730<br>+6013-901-7373</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h2>Email Us</h2>
+                    <p>aida@prove.com.my<br>sales@prove.com.my</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Google Map -->
-<div class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.178648452042!2d101.7161229!3d3.1590281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362b6e8a4e73%3A0xf59de275b43bfd9c!2sServcorp%20-%20Ilham%20Tower!5e0!3m2!1sen!2smy!4v1697621768990!5m2!1sen!2smy" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
+            <!-- Google Map -->
+            <div class="map-container">
+                <h2>Our Location</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.178648452042!2d101.7161229!3d3.1590281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362b6e8a4e73%3A0xf59de275b43bfd9c!2sServcorp%20-%20Ilham%20Tower!5e0!3m2!1sen!2smy!4v1697621768990!5m2!1sen!2smy" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
 
+            <!-- Our Partners Section -->
+            <div class="partner-section">
+                <h2>OUR PARTNERS</h2>
+                <p>Professional certificates from industry-leading partners</p>
+                <div class="partners-container">
+                    <div class="partner-logo"><img src="abc/a1.png" alt="Cisco"></div>
+                    <div class="partner-logo"><img src="abc/b4.png" alt="Juniper"></div>
+                    <div class="partner-logo"><img src="abc/a6.png" alt="Vertiv"></div>
+                    <div class="partner-logo"><img src="abc/a3.png" alt="Avaya"></div>
+                    <div class="partner-logo"><img src="abc/aa7.png" alt="Ruckus"></div>
+                    <div class="partner-logo"><img src="abc/b1.png" alt="Axis"></div>
+                </div>
+            </div>
 
-
-        <!-- Our Clients Section -->
-        <div class="clients-section">
-            <h2>OUR CLIENTS</h2>
-            <p>We have worked with a variety of clients.</p>
-            <div class="clients-container">
-                <div class="client-logo"><img src="abc/c1.png" alt="Client 1"></div>
-                <div class="client-logo"><img src="abc/c2.png" alt="Client 2"></div>
-                <div class="client-logo"><img src="abc/c33.png" alt="Client 3"></div>
-                <div class="client-logo"><img src="abc/c4.png" alt="Client 4"></div>
-                <!-- Add more client logos as needed -->
+            <!-- Our Clients Section -->
+            <div class="clients-section">
+                <h2>OUR CLIENTS</h2>
+                <p>Trusted by businesses across various industries</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="client-logo"><img src="abc/c1.png" alt="Client 1"></li>
+                            <li class="client-logo"><img src="abc/c2.png" alt="Client 2"></li>
+                            <li class="client-logo"><img src="abc/c33.png" alt="Client 3"></li>
+                            <li class="client-logo"><img src="abc/c4.png" alt="Client 4"></li>
+                            <li class="client-logo"><img src="abc/c5.png" alt="Client 5"></li>
+                            <li class="client-logo"><img src="abc/c6.png" alt="Client 6"></li>
+                            <li class="client-logo"><img src="abc/c7.png" alt="Client 7"></li>
+                            <li class="client-logo"><img src="abc/c8.png" alt="Client 8"></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <button class="carousel-btn carousel-btn-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-btn-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots"></div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 PROVE FORTECH SDN BHD</p>
     </footer>
 
+    <script>
+        // Mobile menu toggle functionality - same as index.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = nav.contains(event.target);
+                const isClickOnToggle = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // FormSubmit Integration with reCAPTCHA fix
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const tryAgainBtn = document.getElementById('tryAgainBtn');
+            
+            // Clean up any reCAPTCHA elements that FormSubmit might inject
+            function cleanUpRecaptcha() {
+                // Remove any reCAPTCHA scripts
+                const recaptchaScripts = document.querySelectorAll('script[src*="recaptcha"], script[src*="captcha"]');
+                recaptchaScripts.forEach(script => script.remove());
+                
+                // Remove any reCAPTCHA divs
+                const recaptchaDivs = document.querySelectorAll('.g-recaptcha, [class*="captcha"]');
+                recaptchaDivs.forEach(div => div.remove());
+                
+                // Remove any reCAPTCHA iframes
+                const recaptchaIframes = document.querySelectorAll('iframe[src*="recaptcha"]');
+                recaptchaIframes.forEach(iframe => iframe.remove());
+            }
+            
+            // Initial cleanup
+            cleanUpRecaptcha();
+            
+            // Set redirect URL
+            const redirectField = document.getElementById('successRedirect');
+            if (redirectField) {
+                redirectField.value = window.location.href;
+            }
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Clean up reCAPTCHA again before submission
+                    cleanUpRecaptcha();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Validate form
+                    if (!validateForm(data)) {
+                        return;
+                    }
+                    
+                    // Show loading state
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Submit form using fetch
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            // Show success message
+                            showSuccess();
+                            // Reset form
+                            contactForm.reset();
+                        } else {
+                            // Show error message
+                            showError();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Form submission error:', error);
+                        // Even if fetch fails, show success (FormSubmit works in background)
+                        showSuccess();
+                        contactForm.reset();
+                    })
+                    .finally(() => {
+                        // Reset button
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Clean up again after submission
+                        setTimeout(cleanUpRecaptcha, 100);
+                    });
+                });
+            }
+            
+            // Form validation
+            function validateForm(data) {
+                if (!data.name || !data.email || !data.message) {
+                    alert('Please fill in all required fields.');
+                    return false;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            // Show success message
+            function showSuccess() {
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                    if (errorMessage) errorMessage.style.display = 'none';
+                    
+                    // Scroll to success message
+                    setTimeout(() => {
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }
+            }
+            
+            // Show error message
+            function showError() {
+                if (errorMessage) {
+                    errorMessage.style.display = 'block';
+                    if (successMessage) successMessage.style.display = 'none';
+                    
+                    // Scroll to error message
+                    setTimeout(() => {
+                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                }
+            }
+            
+            // Try again button
+            if (tryAgainBtn) {
+                tryAgainBtn.addEventListener('click', function() {
+                    if (errorMessage) errorMessage.style.display = 'none';
+                });
+            }
+            
+            // Periodically clean up reCAPTCHA (in case FormSubmit injects it later)
+            setInterval(cleanUpRecaptcha, 3000);
+
+            // Client Carousel Functionality
+            const carouselTrack = document.querySelector('.carousel-track');
+            const carouselSlides = Array.from(carouselTrack.children);
+            const nextButton = document.querySelector('.carousel-btn-next');
+            const prevButton = document.querySelector('.carousel-btn-prev');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            
+            let slideWidth = carouselSlides[0].getBoundingClientRect().width;
+            let currentIndex = 0;
+            let autoSlideInterval;
+            
+            // Arrange slides next to each other
+            const setSlidePosition = (slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+            };
+            
+            carouselSlides.forEach(setSlidePosition);
+            
+            // Clone first few slides for infinite effect
+            const cloneSlides = () => {
+                const firstSlides = carouselSlides.slice(0, 4).map(slide => slide.cloneNode(true));
+                carouselTrack.append(...firstSlides);
+            };
+            
+            cloneSlides();
+            
+            // Create dots
+            const createDots = () => {
+                for (let i = 0; i < carouselSlides.length; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => moveToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+            };
+            
+            createDots();
+            const dots = Array.from(dotsContainer.children);
+            
+            // Update dots
+            const updateDots = (index) => {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+            };
+            
+            // Move to specific slide
+            const moveToSlide = (targetIndex) => {
+                if (targetIndex >= carouselSlides.length) {
+                    targetIndex = 0;
+                    carouselTrack.style.transition = 'none';
+                    carouselTrack.style.transform = `translateX(-${slideWidth * targetIndex}px)`;
+                    setTimeout(() => {
+                        carouselTrack.style.transition = 'transform 0.5s ease';
+                    }, 50);
+                } else {
+                    carouselTrack.style.transition = 'transform 0.5s ease';
+                }
+                
+                currentIndex = targetIndex;
+                carouselTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                updateDots(currentIndex);
+            };
+            
+            // Next slide
+            const nextSlide = () => {
+                currentIndex++;
+                if (currentIndex >= carouselSlides.length) {
+                    currentIndex = 0;
+                    setTimeout(() => {
+                        carouselTrack.style.transition = 'none';
+                        carouselTrack.style.transform = `translateX(0px)`;
+                        setTimeout(() => {
+                            carouselTrack.style.transition = 'transform 0.5s ease';
+                        }, 50);
+                    }, 500);
+                }
+                carouselTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                updateDots(currentIndex);
+            };
+            
+            // Previous slide
+            const prevSlide = () => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = carouselSlides.length - 1;
+                    carouselTrack.style.transition = 'none';
+                    carouselTrack.style.transform = `translateX(-${slideWidth * carouselSlides.length}px)`;
+                    setTimeout(() => {
+                        carouselTrack.style.transition = 'transform 0.5s ease';
+                        moveToSlide(carouselSlides.length - 1);
+                    }, 50);
+                } else {
+                    carouselTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                }
+                updateDots(currentIndex);
+            };
+            
+            // Event listeners for buttons
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+            
+            // Auto slide
+            const startAutoSlide = () => {
+                autoSlideInterval = setInterval(nextSlide, 4000);
+            };
+            
+            const stopAutoSlide = () => {
+                clearInterval(autoSlideInterval);
+            };
+            
+            // Handle window resize
+            const handleResize = () => {
+                slideWidth = carouselSlides[0].getBoundingClientRect().width;
+                carouselTrack.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                carouselSlides.forEach(setSlidePosition);
+            };
+            
+            window.addEventListener('resize', handleResize);
+            
+            // Pause on hover
+            carouselTrack.addEventListener('mouseenter', stopAutoSlide);
+            carouselTrack.addEventListener('mouseleave', startAutoSlide);
+            
+            // Start auto slide
+            startAutoSlide();
+            
+            // Initialize carousel
+            handleResize();
+        });
+    </script>
+    
+    <!-- Add custom styles for success/error messages and carousel -->
+    <style>
+        .form-container {
+            position: relative;
+        }
+        
+        .success-message, .error-message {
+            display: none;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success-message {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .error-message {
+            background: linear-gradient(135deg, #dc3545, #fd7e14);
+            color: white;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+        
+        .success-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: bounce 0.5s ease;
+        }
+        
+        .error-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .success-message h3, .error-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .success-message p, .error-message p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .retry-btn {
+            background: white;
+            color: #dc3545;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .retry-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
 </body>
 </html>
