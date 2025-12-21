@@ -508,7 +508,7 @@ footer p {
 /* Small Mobile (360px and below) */
 @media (max-width: 360px) {
     .company-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .hero h2 {
@@ -540,3 +540,4 @@ footer p {
         height: 22px;
     }
 }
+
