@@ -228,13 +228,14 @@ main {
     box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
 }
 
-/* Contact Information Section */
+/* Contact Information Section - FIXED */
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin: 60px 0;
     text-align: center;
+    align-items: start;
 }
 
 .info-box {
@@ -243,6 +244,11 @@ main {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 250px;
 }
 
 .info-box:hover {
@@ -254,18 +260,32 @@ main {
     font-size: 2.5rem;
     color: #004085;
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .info-box h2 {
     font-size: 1.4rem;
     margin-bottom: 15px;
     color: #004085;
+    flex-shrink: 0;
 }
 
 .info-box p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
+    margin-top: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ensure consistent spacing in contact info */
+.info-box p br {
+    display: block;
+    content: "";
+    margin: 8px 0;
 }
 
 /* Google Map Section */
@@ -339,10 +359,11 @@ main {
     filter: grayscale(0%);
 }
 
-/* Clients Carousel Section */
+/* Clients Carousel Section - FIXED */
 .clients-section {
     margin: 60px 0;
     text-align: center;
+    position: relative;
 }
 
 .clients-section h2 {
@@ -367,6 +388,8 @@ main {
 .carousel-track-container {
     overflow: hidden;
     padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .carousel-track {
@@ -374,11 +397,16 @@ main {
     position: relative;
     transition: transform 0.5s ease;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .client-logo {
     flex: 0 0 25%;
     padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .client-logo img {
@@ -387,6 +415,7 @@ main {
     height: auto;
     filter: grayscale(100%);
     transition: all 0.3s ease;
+    object-fit: contain;
 }
 
 .client-logo img:hover {
@@ -431,7 +460,7 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .carousel-dot {
@@ -466,6 +495,82 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+/* Success/Error Messages */
+.form-container {
+    position: relative;
+}
+
+.success-message, .error-message {
+    display: none;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-message {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.error-message {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+    color: white;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.success-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    animation: bounce 0.5s ease;
+}
+
+.error-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.success-message h3, .error-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.success-message p, .error-message p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.retry-btn {
+    background: white;
+    color: #dc3545;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.retry-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 /* =========================================== */
@@ -555,9 +660,15 @@ footer p {
         padding: 12px;
     }
     
+    /* Contact info - 2 columns on tablet */
     .contact-info {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+    
+    .info-box {
+        min-height: 220px;
+        padding: 20px 15px;
     }
     
     .map-container h2 {
@@ -582,6 +693,7 @@ footer p {
         padding: 15px;
     }
     
+    /* Client carousel adjustments for tablet */
     .client-logo {
         flex: 0 0 50%;
     }
@@ -644,9 +756,14 @@ footer p {
         font-size: 1rem;
     }
     
+    /* Contact info - single column on mobile */
     .contact-info {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+    
+    .info-box {
+        min-height: 200px;
     }
     
     .map-container h2 {
@@ -676,6 +793,7 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    /* Client carousel adjustments for mobile */
     .client-logo {
         flex: 0 0 100%;
     }
@@ -719,7 +837,7 @@ footer p {
         padding: 20px 15px;
     }
     
-    .contact-info h2 {
+    .info-box h2 {
         font-size: 1.2rem;
     }
     
