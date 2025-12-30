@@ -236,83 +236,118 @@ nav ul li a.active {
     margin-top: 20px;
 }
 
-/* Why Choose Us Section */
+/* Why Choose Us Section - FIXED POSITIONING */
 .why-choose-us {
     background: url('logo/pr4.png') no-repeat center center/cover;
     color: white;
-    padding: 40px 20px;
-    margin-top: 70px;
-    text-shadow: none;
+    padding: 70px 20px;
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .why-choose-us h2 {
     font-size: 3em;
     color: #0056b3;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-weight: bold;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #0056b3, #004085);
+    border-radius: 2px;
 }
 
 .boxes {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
+    padding: 20px;
 }
 
 .box {
     background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    flex: 1;
-    min-width: 450px;
-    max-width: 500px;
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    flex: 0 0 calc(25% - 30px);
+    min-width: 250px;
+    max-width: 280px;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 350px;
 }
 
 .box img {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .box h3 {
     color: #004085;
     font-size: 1.5em;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-weight: 600;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .box p {
     color: #555;
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Outer Background for Welcome Section */
 .outer-container {
     background: url('logo/ppr4.png') no-repeat center center/cover;
-    padding: 50px 0;
+    padding: 70px 20px;
 }
 
 .container {
     background: url('logo/s4.png') no-repeat center center/cover;
     position: relative;
-    padding: 40px 20px;
+    padding: 50px 30px;
     color: white;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .container::before {
@@ -324,7 +359,7 @@ nav ul li a.active {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .container h2, 
@@ -338,6 +373,21 @@ nav ul li a.active {
 .container img {
     position: relative;
     z-index: 1;
+    width: 400px;
+    max-width: 80%;
+    margin-bottom: 25px;
+}
+
+.container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    max-width: 800px;
 }
 
 /* Footer Section */
@@ -345,12 +395,11 @@ footer {
     background-color: #004085;
     color: white;
     text-align: center;
-    padding: 15px;
-    position: relative;
-    bottom: 0;
+    padding: 20px;
     width: 100%;
     font-size: 0.9em;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
 }
 
 footer p {
@@ -443,19 +492,42 @@ footer p {
         font-size: 1em;
     }
     
+    /* Why Choose Us - Tablet adjustments */
+    .why-choose-us {
+        padding: 50px 15px;
+    }
+    
     .why-choose-us h2 {
         font-size: 2.2em;
+        margin-bottom: 30px;
     }
     
     .box {
-        min-width: 300px;
-        max-width: 350px;
-        padding: 15px;
+        flex: 0 0 calc(50% - 20px);
+        min-width: 250px;
+        max-width: 300px;
+        padding: 20px;
+        min-height: 320px;
+    }
+    
+    .box h3 {
+        font-size: 1.3em;
+        min-height: 50px;
+    }
+    
+    .box img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .container {
+        padding: 30px 20px;
+        margin: 20px auto;
     }
     
     .container img {
-        width: 350px;
-        max-width: 90%;
+        width: 300px;
+        max-width: 85%;
     }
     
     .container h2 {
@@ -502,6 +574,67 @@ footer p {
     
     .hero {
         padding-top: 80px;
+        height: 60vh;
+    }
+    
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+    
+    /* Why Choose Us - Mobile adjustments */
+    .why-choose-us {
+        padding: 40px 10px;
+    }
+    
+    .why-choose-us h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    
+    .box {
+        flex: 0 0 100%;
+        max-width: 320px;
+        min-height: 300px;
+        padding: 20px 15px;
+    }
+    
+    .box h3 {
+        font-size: 1.2em;
+        min-height: 45px;
+    }
+    
+    .box img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .boxes {
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .outer-container {
+        padding: 40px 15px;
+    }
+    
+    .container {
+        padding: 25px 15px;
+    }
+    
+    .container img {
+        width: 250px;
+    }
+    
+    .container h2 {
+        font-size: 1.5em;
+    }
+    
+    .container p {
+        font-size: 0.95em;
     }
 }
 
@@ -523,6 +656,19 @@ footer p {
         font-size: 1.5em;
     }
     
+    .box {
+        max-width: 280px;
+        min-height: 280px;
+    }
+    
+    .box h3 {
+        font-size: 1.1em;
+    }
+    
+    .box p {
+        font-size: 0.9em;
+    }
+    
     .container img {
         width: 200px;
     }
@@ -540,4 +686,3 @@ footer p {
         height: 22px;
     }
 }
-
